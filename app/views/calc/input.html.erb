@@ -1,7 +1,8 @@
 <h1>Страница ввода N</h1>
-<%= form_tag("/calc/view", :method => "get") do %>
+<%= form_tag("/calc/view.json", :method => "get", remote: true, id: 'calc_form') do %>
 <%= label_tag("Введите число n:") %>
 <%= number_field_tag(:less_than_number, nil, min: 1) %> <br/>
 <br/>
-<%= submit_tag("Найти палиндромы") %>
+<%= submit_tag("Find palindroms") %>
 <% end %>
+<div id="result"></div>
